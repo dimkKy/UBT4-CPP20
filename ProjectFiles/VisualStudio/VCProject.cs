@@ -555,7 +555,7 @@ namespace UnrealBuildTool
 		/// <returns>C++ standard version</returns>
 		public CppStandardVersion GetIntelliSenseCppVersion()
 		{
-			if (IntelliSenseCppVersion != CppStandardVersion.Default)
+            if (IntelliSenseCppVersion != CppStandardVersion.Default)
 			{
 				return IntelliSenseCppVersion;
 			}
@@ -568,7 +568,6 @@ namespace UnrealBuildTool
 					Version = Combination.ProjectTarget.TargetRules.CppStandard;
 				}
 			}
-			//return CppStandardVersion.Cpp20;
             return Version;
         }
 		
@@ -587,7 +586,7 @@ namespace UnrealBuildTool
                 case CppStandardVersion.Cpp20:
                     return "/std:c++20";
                 case CppStandardVersion.Latest:
-					return "/std:c++20";
+					return "/std:c++latest";
 				default:
 					throw new ArgumentOutOfRangeException(nameof(Version), Version, "Please update switch above with new C++ version");
 			}
